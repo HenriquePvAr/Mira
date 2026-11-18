@@ -4,6 +4,15 @@ const navegacaoPrincipal = document.querySelector('#navegacao-principal');
 const cabecalho = document.querySelector('.cabecalho');
 const consultaCelular = window.matchMedia('(max-width: 680px)');
 
+// Mantém os links e nomes do rodapé livres do atalho flutuante.
+const rodapeParaAtalho = document.querySelector('.rodape');
+const atalhoFlutuante = document.querySelector('a.atalho-chat');
+if (rodapeParaAtalho && atalhoFlutuante && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([entrada]) => {
+    atalhoFlutuante.classList.toggle('atalho-chat--rodape-visivel', entrada.isIntersecting);
+  }).observe(rodapeParaAtalho);
+}
+
 /** Atualiza o estado visual e acessível do menu móvel. */
 function definirMenuAberto(aberto) {
   if (!botaoMenu || !navegacaoPrincipal) return;
@@ -526,5 +535,5 @@ function prepararCarrosselIndigena(seletor, seletorJanela, seletorCartao, interv
   movimento.addEventListener('change', agendar);
   agendar();
 }
-prepararCarrosselIndigena('[data-vozes-carrossel]', '.vozes__janela', '.voz-card', 7000);
+prepararCarrosselIndigena('[data-vozes-carrossel]', '.vozes__janela', '.voz-card', 7000, '[data-vozes-anterior]', '[data-vozes-proximo]');
 prepararCarrosselIndigena('[data-historias-carrossel]', '.historias__janela', '.historia-card', 6000, '[data-historias-anterior]', '[data-historias-proximo]');

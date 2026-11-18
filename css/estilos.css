@@ -143,7 +143,9 @@ h1, h2, h3 { margin-top: 0; font-family: 'Fraunces', Georgia, serif; letter-spac
 .rodape__grade { display: grid; grid-template-columns: 1.2fr .9fr 1.4fr; gap: clamp(24px, 4vw, 56px); align-items: start; padding-bottom: 25px; }
 .rodape__grade p { margin: 12px 0 0; color: #ddc9b1; font-size: 10px; line-height: 1.55; }
 .rodape__grade h2 { margin: 0 0 12px; color: var(--dourado); font-family: 'Manrope', Arial, sans-serif; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
-.rodape__navegacao > a { display: block; width: fit-content; margin: 6px 0; color: var(--creme); font-size: 11px; text-decoration: none; }
+.rodape__navegacao { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; align-items: start; }
+.rodape__navegacao h2 { grid-column: 1 / -1; margin-bottom: 4px; }
+.rodape__navegacao > a { display: block; min-width: 0; margin: 0; color: var(--creme); font-size: 11px; line-height: 1.4; text-decoration: none; }
 .rodape__canais > a { display: grid; min-width: 0; min-height: 34px; grid-template-columns: 21px max-content 14px; align-items: center; justify-content: start; gap: 9px; margin: 5px 0; color: var(--creme); font-size: 10px; text-decoration: none; }
 .rodape__canais > a:hover { color: var(--amarelo); }
 .rodape__canais > a > svg:first-child { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
@@ -152,6 +154,10 @@ h1, h2, h3 { margin-top: 0; font-family: 'Fraunces', Georgia, serif; letter-spac
 .rodape__canais small { margin-top: 2px; color: #ddc9b1; font-size: 9px; }
 .rodape__evento > p + p { margin-top: 10px; }
 .rodape__base { display: flex; justify-content: space-between; gap: 14px; padding-top: 11px; border-top: 1px solid rgb(255 248 235 / 18%); color: #c6ae94; font-size: 8px; }
+.rodape__equipe { padding-bottom: 24px; }
+.rodape__equipe h2 { margin: 0 0 10px; color: var(--dourado); font-family: 'Manrope', Arial, sans-serif; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.rodape__equipe p { margin: 0 0 12px; color: #ddc9b1; font-size: 11px; line-height: 1.5; }
+.rodape__equipe ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; margin: 0; padding: 0; list-style: none; color: var(--creme); font-size: 11px; line-height: 1.5; }
 
 .carrossel { position: relative; }
 .carrossel__janela { overflow: hidden; overflow: clip; }
@@ -184,8 +190,10 @@ body.modal-aberto { overflow: hidden; }
 .chamado-museu__cartao { display: flex; overflow:hidden; flex-direction: column; align-items: stretch; border: 1px solid var(--terracota); border-radius: 18px; color: inherit; background: var(--creme); }
 .chamado-museu__cartao:hover { background: #fff4e2; }
 .chamado-museu__figura { margin:0; }
+.chamado-museu__figura--credito { position:relative; }
 .chamado-museu__imagem { display:block; width:100%; height:clamp(180px,19vw,250px); object-fit:cover; }
 .chamado-museu__figura figcaption { padding:6px 12px; color:var(--texto-suave); background:#fff8eb; font-size:9px; line-height:1.4; }
+.chamado-museu__figura--credito figcaption { position:absolute; right:0; bottom:0; left:0; background:rgb(255 248 235 / 94%); }
 .chamado-museu__figura figcaption a { color:var(--terracota); text-underline-offset:2px; }
 .chamado-museu__corpo { display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:18px 32px 28px; }
 .chamado-museu h2 { margin: 0 0 10px; font-size: clamp(28px, 3vw, 38px); }
@@ -200,6 +208,7 @@ body.modal-aberto { overflow: hidden; }
 .atalho-chat__rotulo { width: 170px; max-width: none; height: auto; filter: drop-shadow(0 3px 6px rgb(41 25 20 / 35%)); }
 .atalho-chat:hover, .atalho-chat:focus-visible { transform: translateY(-3px); }
 .atalho-chat:focus-visible { outline: 3px solid var(--dourado); outline-offset: 4px; border-radius: 12px; }
+.atalho-chat--rodape-visivel { visibility: hidden; }
 .painel-chat { position: fixed; z-index: 26; right: 48px; bottom: 168px; display: flex; width: min(360px, calc(100vw - 24px)); max-height: min(560px, calc(100vh - 188px)); flex-direction: column; overflow: hidden; border: 1px solid #d7b994; border-radius: 18px; color: var(--espresso); background: var(--creme); box-shadow: 0 18px 40px rgb(41 25 20 / 22%); }
 .painel-chat[hidden] { display: none; }
 .painel-chat__cabeca { display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 10px; padding: 12px 12px 10px; color: var(--creme); background: var(--espresso-profundo); }
@@ -344,8 +353,19 @@ body.modal-aberto { overflow: hidden; }
 @media (max-width:680px) {
   .navegacao a, .navegacao .navegacao__cta { min-height:44px; }
   .rodape__navegacao > a, .rodape__canais a { display:flex; min-height:44px; align-items:center; }
+  .rodape__grade { gap: 18px; padding-bottom: 20px; }
+  .rodape__navegacao { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
+  .rodape__navegacao > a { align-items: flex-start; padding-block: 8px; }
+  .rodape__navegacao > a, .rodape__canais > a { margin: 0; line-height: 1.4; }
+  .rodape__canais > a { gap: 9px; }
+  .rodape__equipe { padding-bottom: 20px; }
+  .rodape__equipe ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; }
   .bio-modal { width:calc(100vw - 20px); max-height:calc(100dvh - 20px); overflow:auto; overscroll-behavior:contain; }
   .bio-modal__corpo { padding-bottom:max(24px,env(safe-area-inset-bottom)); }
+}
+
+@media (max-width:360px) {
+  .rodape__equipe ul { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -368,6 +388,13 @@ body.modal-aberto { overflow: hidden; }
  .painel-chat__formulario input { min-width:0; }
 }
 
+/* Compacta o atalho em telas menores, preservando o link e seu rótulo. */
+@media (max-width:1024px) {
+ .atalho-chat { right:8px; bottom:calc(8px + env(safe-area-inset-bottom)); gap:2px; }
+ .atalho-chat__icone { width:44px; height:44px; }
+ .atalho-chat__rotulo { width:90px; }
+}
+
 .carrossel__controles { display:flex; justify-content:center; gap:12px; padding:14px 0 4px; }
 .carrossel__seta { display:grid; width:42px; height:42px; place-items:center; border:1px solid var(--terracota); border-radius:50%; color:var(--terracota); background:var(--creme); font:700 22px/1 Manrope,sans-serif; cursor:pointer; transition:color 160ms ease,background-color 160ms ease,transform 160ms ease; }
 .carrossel__seta:hover { color:var(--creme); background:var(--terracota); transform:translateY(-2px); }
@@ -375,3 +402,54 @@ body.modal-aberto { overflow: hidden; }
 
 .rodape__credito a { color:#f3ad65; font-weight:700; text-underline-offset:3px; }
 .rodape__credito a:hover { color:#fff8eb; }
+
+/* Créditos por área de atuação. */
+.rodape__equipe .equipe__grade { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+.rodape__equipe .equipe__bloco { min-width:0; text-align:center; }
+.rodape__equipe .equipe__icone { display:block; width:28px; height:28px; margin:0 auto 8px; color:var(--dourado); fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.rodape__equipe .equipe__bloco h3 { margin:0 0 8px; color:var(--dourado); font:800 10px/1.4 'Manrope',Arial,sans-serif; letter-spacing:.05em; }
+.rodape__equipe .equipe__nomes { display:block; margin:0; padding:0; list-style:none; color:var(--creme); font-size:11px; line-height:1.5; }
+.rodape__equipe .equipe__nomes li + li { margin-top:3px; }
+@media (min-width:601px) { .rodape__equipe .equipe__bloco h3 { min-height:42px; } }
+@media (max-width:1024px) { .rodape__equipe .equipe__grade { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 16px; } }
+@media (max-width:600px) { .rodape__equipe .equipe__grade { grid-template-columns:1fr; gap:16px; } }
+
+/* Cartões educativos da página de mulheres negras. */
+.cultura-afro { padding:clamp(32px,4vw,48px) 0; color:var(--espresso); background:var(--pergaminho); }
+.cultura-afro h2 { margin:0 0 20px; font-size:clamp(28px,3.2vw,40px); line-height:1.1; }
+.cultura-afro__grade { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.cultura-afro__cartao { display:flex; min-width:0; flex-direction:column; align-items:flex-start; padding:20px; border:1px solid #d7b994; border-radius:15px; background:var(--creme); }
+.cultura-afro__imagem { display:block; width:100%; aspect-ratio:16 / 10; object-fit:cover; border-radius:10px; margin-bottom:16px; }
+.cultura-afro__cartao h3 { margin:0 0 10px; color:var(--espresso); font-size:22px; line-height:1.15; }
+.cultura-afro__cartao p { margin:0 0 16px; color:var(--texto-suave); font-size:14px; line-height:1.55; }
+.cultura-afro__cartao a { margin-top:auto; color:var(--terracota); font-size:13px; font-weight:800; line-height:1.4; text-underline-offset:3px; }
+@media (max-width:900px) { .cultura-afro__grade { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px) { .cultura-afro__grade { grid-template-columns:1fr; gap:12px; } .cultura-afro__cartao { padding:18px; } }
+
+/* Realce discreto, restrito aos cartões culturais da página negra. */
+.pagina-inicial .chamado-museu__cartao, .pagina-inicial .cultura-afro__cartao { transition:box-shadow 180ms ease, background-color 180ms ease, opacity 520ms ease, transform 520ms ease; }
+.pagina-inicial .chamado-museu__cartao:focus-within, .pagina-inicial .cultura-afro__cartao:focus-within { box-shadow:0 8px 22px rgb(48 24 15 / 18%); }
+@media (hover:hover) {
+  .pagina-inicial .chamado-museu__cartao:hover, .pagina-inicial .cultura-afro__cartao:hover { box-shadow:0 8px 22px rgb(48 24 15 / 18%); }
+  .pagina-inicial .cultura-afro__cartao a:hover { text-decoration-thickness:2px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .pagina-inicial .chamado-museu__cartao, .pagina-inicial .cultura-afro__cartao { transition:none; }
+}
+
+.pagina-inicial .cultura-afro__imagem,
+.pagina-inicial .chamado-museu__imagem { outline:1px solid #d7b994; outline-offset:-1px; }
+
+/* Carrosséis manuais da página de mulheres negras. */
+:is(.pagina-inicial, .pagina-indigenas) .cultural-carrossel__controles { display:flex; justify-content:flex-end; gap:9px; margin:0 0 12px; }
+:is(.pagina-inicial, .pagina-indigenas) .cultural-carrossel__controles[hidden] { display:none; }
+:is(.pagina-inicial, .pagina-indigenas) .cultural-carrossel__controles button:disabled { opacity:.45; cursor:default; }
+:is(.pagina-inicial, .pagina-indigenas) .cultural-carrossel__trilho { display:flex; overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:thin; scrollbar-color:var(--terracota) var(--pergaminho); }
+:is(.pagina-inicial, .pagina-indigenas) .cultural-carrossel__trilho:focus-visible { outline:3px solid var(--dourado); outline-offset:3px; }
+:is(.pagina-inicial, .pagina-indigenas) .cultural-carrossel__trilho > article { min-width:0; scroll-snap-align:start; }
+.pagina-inicial .cultura-afro__grade > article { flex:0 0 calc((100% - 32px) / 3); }
+.pagina-inicial .chamado-museu__grade > article { flex:0 0 calc((100% - 18px) / 2); }
+@media (max-width:900px) { .pagina-inicial .cultura-afro__grade > article { flex-basis:calc((100% - 16px) / 2); } }
+@media (max-width:680px) { .pagina-inicial .chamado-museu__grade > article { flex-basis:100%; } }
+@media (max-width:600px) { .pagina-inicial .cultura-afro__grade > article { flex-basis:100%; } }
+@media (prefers-reduced-motion:reduce) { :is(.pagina-inicial, .pagina-indigenas) .cultural-carrossel__trilho { scroll-behavior:auto; } }
