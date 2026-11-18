@@ -15,7 +15,10 @@
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/indigenas.css">
+  <link rel="stylesheet" href="css/videos.css">
   <script src="js/script.js" defer></script>
+  <script src="js/videos.js" defer></script>
+  <script src="js/carrosseis-culturais.js" defer></script>
 </head>
 <body class="pagina-indigenas">
   <a class="pular-conteudo" href="#conteudo">Pular para o conte&uacute;do</a>
@@ -46,7 +49,11 @@
           <h2 id="titulo-vozes">Vozes e trajet&oacute;rias<br><span>ind&iacute;genas</span></h2>
           <p>Conhe&ccedil;a um pouco das trajet&oacute;rias de lideran&ccedil;as ind&iacute;genas e leia suas palavras nas entrevistas que serviram de fonte.</p>
         </header>
-        <div class="vozes__janela">
+        <nav class="vozes__controles" aria-label="Navegação das biografias indígenas">
+          <button class="historias__botao" type="button" data-vozes-anterior aria-controls="vozes-janela" aria-label="Biografias anteriores">&#8592;</button>
+          <button class="historias__botao" type="button" data-vozes-proximo aria-controls="vozes-janela" aria-label="Próximas biografias">&#8594;</button>
+        </nav>
+        <div class="vozes__janela" id="vozes-janela">
         <div class="vozes__grade" data-vozes-carrossel role="region" aria-roledescription="carrossel" aria-label="Trajet&oacute;rias e falas de pessoas ind&iacute;genas" aria-live="off">
 
           <article class="voz-card">
@@ -158,6 +165,61 @@
             </div>
           </article>
         </div>
+        </div>
+      </div>
+    </section>
+    <section class="videos" id="videos-educativos" aria-labelledby="titulo-videos">
+      <div class="container">
+        <header class="videos__cabecalho">
+          <h2 id="titulo-videos">Elas contam suas histórias</h2>
+          <p class="videos__nota">Vídeos em representações digitais educativas; não são gravações autênticas das personagens retratadas.</p>
+          <p class="videos__instrucao">Deslize para conhecer todas as histórias.</p>
+        </header>
+        <nav class="videos__controles" aria-label="Navegação dos vídeos">
+          <button class="videos__seta" type="button" data-videos-anterior aria-controls="videos-trilho" aria-label="Vídeos anteriores">&#8592;</button>
+          <button class="videos__seta" type="button" data-videos-proximo aria-controls="videos-trilho" aria-label="Próximos vídeos">&#8594;</button>
+        </nav>
+        <div id="videos-trilho" class="videos__trilho" role="region" aria-label="Vídeos educativos: deslize para ver mais" tabindex="0">
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/indigenas/sonia-guajajara.png" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Sônia Guajajara" data-src="assets/videos/indigenas/sonia-guajajara.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Sônia Guajajara</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/indigenas/tuire-kayapo.png" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Tuíre Kayapó" data-src="assets/videos/indigenas/tuire-kayapo.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Tuíre Kayapó</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/indigenas/joenia-wapichana.png" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Joênia Wapichana" data-src="assets/videos/indigenas/joenia-wapichana.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Joênia Wapichana</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/indigenas/watatakalu-yawalapiti.png" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Watatakalu Yawalapiti" data-src="assets/videos/indigenas/watatakalu-yawalapiti.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Watatakalu Yawalapiti</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -276,8 +338,32 @@
           </article>
         </div>
         </div>
+        <div class="museus-indigenas" aria-labelledby="titulo-museus-indigenas" data-carrossel-cultural>
+          <h3 id="titulo-museus-indigenas">Museus para conhecer</h3>
+          <nav class="cultural-carrossel__controles" aria-label="Navegação dos museus indígenas" hidden>
+            <button class="carrossel__seta" type="button" data-cultural-anterior aria-controls="museus-indigenas-trilho" aria-label="Museu anterior">&#8592;</button>
+            <button class="carrossel__seta" type="button" data-cultural-proximo aria-controls="museus-indigenas-trilho" aria-label="Próximo museu">&#8594;</button>
+          </nav>
+          <div class="museus-indigenas__grade cultural-carrossel__trilho" id="museus-indigenas-trilho" role="region" aria-label="Cartões de museus indígenas" tabindex="0">
+            <article class="museus-indigenas__cartao">
+              <img class="museus-indigenas__imagem" src="assets/cultura/indigenas/museu-do-indio-manaus.jpg" alt="Museu do Índio, em Manaus" loading="lazy">
+              <h4>Museu do Índio</h4>
+              <p>Manaus, Amazonas</p>
+              <p>Seu acervo reúne objetos de povos indígenas do Alto Rio Negro.</p>
+              <a href="https://cadastro.museus.gov.br/museus/museu-do-indio-manaus/" target="_blank" rel="noopener noreferrer">Conhecer o cadastro no Ibram</a>
+            </article>
+            <article class="museus-indigenas__cartao">
+              <img class="museus-indigenas__imagem" src="assets/cultura/indigenas/museu-das-culturas-indigenas-sao-paulo.jpg" alt="Museu das Culturas Indígenas, em São Paulo" loading="lazy">
+              <h4>Museu das Culturas Indígenas</h4>
+              <p>São Paulo, São Paulo</p>
+              <p>Um espaço de encontro com histórias e culturas dos povos indígenas.</p>
+              <a href="https://museudasculturasindigenas.org.br/" target="_blank" rel="noopener noreferrer">Conhecer o site do museu</a>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
+
   </main>
 
 <footer class="rodape" id="contato">
@@ -290,8 +376,7 @@
       </div>
       <nav class="rodape__navegacao" aria-label="Navegação do rodapé">
         <h2>Navegue</h2>
-        <a href="negras.html#falas-de-maria">Falas de Maria</a><a href="negras.html#marielle">Marielle
-          Franco</a><a href="index.html#datas">Datas e locais</a>
+        <a href="#vozes" aria-label="Sônia Guajajara na seção Vozes e trajetórias indígenas">Sônia Guajajara</a><a href="#vozes" aria-label="Txai Suruí na seção Vozes e trajetórias indígenas">Txai Suruí</a><a href="index.html#datas">Datas e locais</a>
       </nav>
       <div class="rodape__canais">
         <h2>Canais oficiais</h2>
@@ -319,11 +404,50 @@
         </a>
       </div>
     </div>
+    <section class="container rodape__equipe" aria-labelledby="titulo-equipe">
+      <h2 id="titulo-equipe">Equipe do Projeto MIRA</h2>
+      <p>Projeto desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas — 4º período — UNIESBAM, unidade Adrianópolis.</p>
+      <div class="equipe__grade">
+        <div class="equipe__bloco">
+          <svg class="equipe__icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg>
+          <h3>PRODUÇÃO AUDIOVISUAL</h3>
+          <ul class="equipe__nomes">
+            <li>Breno Ferreira Ribeiro</li>
+            <li>Angel Luis Rodriguez Vizcaino</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <img class="equipe__icone" src="assets/icone-conversas.svg" alt="" width="28" height="28">
+          <h3>DESENVOLVIMENTO E ANIMAÇÃO DO CHATBOT</h3>
+          <ul class="equipe__nomes">
+            <li>Andrei Silva dos Santos</li>
+            <li>Henrique Paiva Araújo</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <svg class="equipe__icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M10 8l-2 2 2 2M14 8l2 2-2 2"/></svg>
+          <h3>DESENVOLVIMENTO DA PÁGINA, TESTES E INTEGRAÇÃO COM O CHATBOT</h3>
+          <ul class="equipe__nomes">
+            <li>Henrique Paiva Araújo</li>
+            <li>Lucas Vitor Conceição da Costa</li>
+            <li>Cínthia Raquel Ferreira da Costa</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <img class="equipe__icone" src="assets/icone-livro.svg" alt="" width="28" height="28">
+          <h3>PESQUISA, CONTEÚDO HISTÓRICO E APOIO À IMPLEMENTAÇÃO</h3>
+          <ul class="equipe__nomes">
+            <li>Luana Mendonça Tavares</li>
+            <li>Flavia Tainara Fonseca da Cruz</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <div class="container rodape__base"><span>© 2026 UNIESBAM · Cultura Afro e Indígena</span><span class="rodape__credito">Desenvolvido por <a href="https://github.com/HenriquePvAr/LaddingPage" target="_blank" rel="noopener noreferrer">Projeto Mira</a></span></div>
   </footer>
 
-<a class="atalho-chat" href="https://wa.me/5592992270565" target="_blank" rel="noopener noreferrer"
-    aria-label="Conversar pelo WhatsApp, (92) 99227-0565, abre em nova aba">
+<a class="atalho-chat" href="https://wa.me/5592986179198" target="_blank" rel="noopener noreferrer"
+    aria-label="Conversar pelo WhatsApp, (92) 98617-9198, abre em nova aba">
     <img class="atalho-chat__icone" src="assets/optimized/chatbot.webp" alt="" width="256" height="228">
     <img class="atalho-chat__rotulo" src="assets/optimized/chatbot-rotulo.webp" alt="" width="560" height="129">
   </a>

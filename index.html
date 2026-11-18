@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <script src="js/script.js" defer></script>
+  <script src="js/carrosseis-culturais.js" defer></script>
   <link rel="stylesheet" href="css/inicio.css">
 </head>
 
@@ -38,7 +39,7 @@
     </div>
   </header><main id="conteudo">
 <section class="portal container" aria-labelledby="titulo-principal">
-  <p class="sobretitulo">Memória, identidade e ancestralidade</p>
+  <p class="sobretitulo">MEMÓRIA, IDENTIDADE, RAÍZES E ANCESTRALIDADE</p>
   <h1 class="portal__marca" id="titulo-principal"><img class="portal__logo" src="assets/optimized/miralogo-1400.webp" srcset="assets/optimized/miralogo-900.webp 900w, assets/optimized/miralogo-1400.webp 1400w, assets/optimized/miralogo.webp 2716w" sizes="(max-width: 680px) min(80.5vw, 387px), (max-width: 1024px) min(80.5vw, 548px), 645px" alt="Mira" width="2716" height="1124" fetchpriority="high"></h1>
   <p class="portal__subtitulo">Mulheres que Inspiram</p>
   <p class="portal__mensagem">Valorizar as mulheres negras e indígenas brasileiras é reconhecer as vozes, os saberes e as lutas que constroem nossa história.</p>
@@ -54,10 +55,14 @@
     </a>
   </div>
 </section>
-    <section class="secao datas" id="datas" aria-labelledby="titulo-datas">
+    <section class="secao datas" id="datas" aria-labelledby="titulo-datas" data-carrossel-cultural>
       <div class="container">
         <h2 class="datas__titulo" id="titulo-datas">Visite a exposição</h2>
-        <div class="datas__grade">
+        <nav class="datas__controles cultural-carrossel__controles" aria-label="Navegação das datas" hidden>
+          <button class="carrossel__seta" type="button" data-cultural-anterior aria-controls="datas-trilho" aria-label="Data anterior">&#8592;</button>
+          <button class="carrossel__seta" type="button" data-cultural-proximo aria-controls="datas-trilho" aria-label="Próxima data">&#8594;</button>
+        </nav>
+        <div class="datas__grade cultural-carrossel__trilho" id="datas-trilho" role="region" aria-label="Datas e locais da exposição" tabindex="0">
           <article class="cartao-data">
             <img class="cartao-data__icone" src="assets/icone-calendario.svg" alt="" aria-hidden="true">
             <div class="cartao-data__conteudo">
@@ -104,10 +109,10 @@
             height="106"></a>
         <p>Centro Universitário ESBAM<br>Manaus, Amazonas</p>
       </div>
-      <nav class="rodape__navegacao" aria-label="Navegação do rodapé">
+      <nav class="rodape__navegacao rodape__navegacao--portal" aria-label="Navegação do rodapé">
         <h2>Navegue</h2>
-        <a href="negras.html#falas-de-maria">Falas de Maria</a><a href="negras.html#marielle">Marielle
-          Franco</a><a href="index.html#datas">Datas e locais</a>
+        <a class="rodape__cultura" href="negras.html"><img src="assets/optimized/maria-colagem.webp" alt="" width="28" height="28"><span>Mulheres Negras</span></a>
+        <a class="rodape__cultura" href="indigenas.html"><img src="assets/optimized/mulher-indigena-colagem.webp" alt="" width="28" height="28"><span>Mulheres Indígenas</span></a>
       </nav>
       <div class="rodape__canais">
         <h2>Canais oficiais</h2>
@@ -135,6 +140,45 @@
         </a>
       </div>
     </div>
+    <section class="container rodape__equipe" aria-labelledby="titulo-equipe">
+      <h2 id="titulo-equipe">Equipe do Projeto MIRA</h2>
+      <p>Projeto desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas — 4º período — UNIESBAM, unidade Adrianópolis.</p>
+      <div class="equipe__grade">
+        <div class="equipe__bloco">
+          <svg class="equipe__icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg>
+          <h3>PRODUÇÃO AUDIOVISUAL</h3>
+          <ul class="equipe__nomes">
+            <li>Breno Ferreira Ribeiro</li>
+            <li>Angel Luis Rodriguez Vizcaino</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <img class="equipe__icone" src="assets/icone-conversas.svg" alt="" width="28" height="28">
+          <h3>DESENVOLVIMENTO E ANIMAÇÃO DO CHATBOT</h3>
+          <ul class="equipe__nomes">
+            <li>Andrei Silva dos Santos</li>
+            <li>Henrique Paiva Araújo</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <svg class="equipe__icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M10 8l-2 2 2 2M14 8l2 2-2 2"/></svg>
+          <h3>DESENVOLVIMENTO DA PÁGINA, TESTES E INTEGRAÇÃO COM O CHATBOT</h3>
+          <ul class="equipe__nomes">
+            <li>Henrique Paiva Araújo</li>
+            <li>Lucas Vitor Conceição da Costa</li>
+            <li>Cínthia Raquel Ferreira da Costa</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <img class="equipe__icone" src="assets/icone-livro.svg" alt="" width="28" height="28">
+          <h3>PESQUISA, CONTEÚDO HISTÓRICO E APOIO À IMPLEMENTAÇÃO</h3>
+          <ul class="equipe__nomes">
+            <li>Luana Mendonça Tavares</li>
+            <li>Flavia Tainara Fonseca da Cruz</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <div class="container rodape__base"><span>© 2026 UNIESBAM · Cultura Afro e Indígena</span><span class="rodape__credito">Desenvolvido por <a href="https://github.com/HenriquePvAr/LaddingPage" target="_blank" rel="noopener noreferrer">Projeto Mira</a></span></div>
   </footer>  <a class="atalho-chat" href="https://wa.me/5592986179198" target="_blank" rel="noopener noreferrer"
     aria-label="Conversar pelo WhatsApp, (92) 98617-9198, abre em nova aba">

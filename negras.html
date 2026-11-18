@@ -18,7 +18,10 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/videos.css">
   <script src="js/script.js" defer></script>
+  <script src="js/videos.js" defer></script>
+  <script src="js/carrosseis-culturais.js" defer></script>
 </head>
 
 <body class="pagina-inicial">
@@ -102,7 +105,6 @@
                 </p>
                 <p>Denunciou a violência do Estado e insistiu no direito à cidade, à memória e à vida digna. Assassinada
                   em 14 de março de 2018, segue como referência das lutas e conquistas que este encontro celebra.</p>
-                <a class="link-seta" href="index.html#datas">Ver datas e locais</a>
               </div>
             </article>
             <article class="carrossel__slide projeto__grade" id="felipa" role="group" aria-roledescription="slide"
@@ -118,7 +120,6 @@
                   liderou o Quilombo do Mola, perto das cabeceiras do igarapé Itapocu, em Cametá, no Baixo Tocantins (PA).</p>
                 <p>Formado por cerca de 300 pessoas que decidiam juntas os rumos da comunidade, o quilombo se uniu a outros
                   quatro na Confederação do Itapocu e resistiu por décadas a senhores de escravos e tropas portuguesas.</p>
-                <a class="link-seta" href="index.html#datas">Ver datas e locais <span aria-hidden="true">&#8594;</span></a>
               </div>
             </article>
             <article class="carrossel__slide projeto__grade" id="irma-helena" role="group" aria-roledescription="slide"
@@ -134,7 +135,6 @@
                   Manaus nas décadas de 1970 e 1980, ao lado de famílias que não tinham onde morar.</p>
                 <p>Sua atuação foi fundamental na criação de mais de 15 bairros, como Novo Israel, Terra Nova e Zumbi dos
                   Palmares, e ajudou cerca de 500 mil pessoas a conquistar moradia. Uma história de luta contada na nossa cidade.</p>
-                <a class="link-seta" href="index.html#datas">Ver datas e locais</a>
               </div>
             </article>
             <article class="carrossel__slide projeto__grade" id="esperanca-garcia" role="group" aria-roledescription="slide"
@@ -151,7 +151,6 @@
                   mulheres da fazenda.</p>
                 <p>Num tempo em que pessoas escravizadas eram proibidas de estudar, ela usou a escrita para exigir direitos.
                   Em 2022, a OAB a reconheceu como a primeira advogada do Brasil.</p>
-                <a class="link-seta" href="index.html#datas">Ver datas e locais</a>
               </div>
             </article>
           </div>
@@ -167,32 +166,123 @@
 
 
 
-    <section class="chamado-museu" aria-label="Museus para visitar">
-      <div class="container chamado-museu__grade">
+    <section class="videos" id="videos-educativos" aria-labelledby="titulo-videos">
+      <div class="container">
+        <header class="videos__cabecalho">
+          <h2 id="titulo-videos">Elas contam suas histórias</h2>
+          <p class="videos__nota">Vídeos em representações digitais educativas; não são gravações autênticas das personagens retratadas.</p>
+          <p class="videos__instrucao">Deslize para conhecer todas as histórias.</p>
+        </header>
+        <nav class="videos__controles" aria-label="Navegação dos vídeos">
+          <button class="videos__seta" type="button" data-videos-anterior aria-controls="videos-trilho" aria-label="Vídeos anteriores">&#8592;</button>
+          <button class="videos__seta" type="button" data-videos-proximo aria-controls="videos-trilho" aria-label="Próximos vídeos">&#8594;</button>
+        </nav>
+        <div id="videos-trilho" class="videos__trilho" role="region" aria-label="Vídeos educativos: deslize para ver mais" tabindex="0">
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/negras/dandara-dos-palmares.png" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Dandara dos Palmares" data-src="assets/videos/negras/dandara-dos-palmares.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Dandara dos Palmares</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/negras/esperanca-garcia.jpeg" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Esperança Garcia" data-src="assets/videos/negras/esperanca-garcia.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Esperança Garcia</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/negras/tereza-de-benguela.png" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Tereza de Benguela" data-src="assets/videos/negras/tereza-de-benguela.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Tereza de Benguela</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
+          <article class="videos__cartao">
+            <div class="videos__midia">
+              <img class="videos__capa" src="assets/capas/negras/marielle-franco.png" alt="" loading="lazy">
+              <video class="videos__player" controls preload="none" hidden aria-label="Vídeo educativo: Marielle Franco" data-src="assets/videos/negras/marielle-franco.mp4">Seu navegador não oferece suporte a vídeos.</video>
+            </div>
+            <div class="videos__corpo">
+              <h3>Marielle Franco</h3>
+              <button class="videos__assistir" type="button"><span aria-hidden="true">&#9654;</span> Assistir ao vídeo</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cultura-afro" aria-labelledby="titulo-cultura-afro" data-carrossel-cultural>
+      <div class="container">
+        <h2 id="titulo-cultura-afro">Cultura afro-brasileira</h2>
+        <nav class="cultural-carrossel__controles" aria-label="Navegação da cultura afro-brasileira" hidden>
+          <button class="carrossel__seta" type="button" data-cultural-anterior aria-controls="cultura-afro-trilho" aria-label="Cartão cultural anterior">&#8592;</button>
+          <button class="carrossel__seta" type="button" data-cultural-proximo aria-controls="cultura-afro-trilho" aria-label="Próximo cartão cultural">&#8594;</button>
+        </nav>
+        <div class="cultura-afro__grade cultural-carrossel__trilho" id="cultura-afro-trilho" role="region" aria-label="Cartões de cultura afro-brasileira" tabindex="0">
+          <article class="cultura-afro__cartao">
+            <img class="cultura-afro__imagem" src="assets/cultura/negras/capoeira.jpg" alt="Roda de capoeira" loading="lazy">
+            <h3>Capoeira</h3>
+            <p>Expressão cultural afro-brasileira que reúne movimento, música, memória e resistência, com saberes compartilhados por mestres e mestras.</p>
+            <a href="https://bcr.iphan.gov.br/bens-culturais/roda-de-capoeira/" target="_blank" rel="noopener noreferrer">Conhecer a roda de capoeira no Iphan</a>
+          </article>
+          <article class="cultura-afro__cartao">
+            <img class="cultura-afro__imagem" src="assets/cultura/negras/samba-de-roda.jpg" alt="Apresentação de samba de roda" loading="lazy">
+            <h3>Samba de roda</h3>
+            <p>Especialmente presente no Recôncavo Baiano, reúne música e dança em uma tradição afro-brasileira transmitida entre gerações.</p>
+            <a href="https://www.gov.br/iphan/pt-br/assuntos/noticias/samba-de-roda-no-reconcavo-baiano-completa-18-anos-como-patrimonio-cultural-do-brasil" target="_blank" rel="noopener noreferrer">Conhecer o samba de roda no Iphan</a>
+          </article>
+          <article class="cultura-afro__cartao">
+            <img class="cultura-afro__imagem" src="assets/cultura/negras/saberes-e-tradicoes.jpg" alt="Expressão de saberes e tradições afro-brasileiras" loading="lazy">
+            <h3>Saberes e tradições afro-brasileiras</h3>
+            <p>Conhecimentos compartilhados entre gerações, expressões artísticas e práticas comunitárias mantêm vivas memórias e identidades culturais.</p>
+            <a href="https://www.gov.br/iphan/pt-br/patrimonio-cultural/educacao-patrimonial/edital-para-projetos-de-educacao-patrimonial/firma-ponto-da-memoria-para-a-educacao-patrimonial-minas-gerais" target="_blank" rel="noopener noreferrer">Conhecer o projeto Firma Ponto no Iphan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chamado-museu" aria-label="Museus para visitar" data-carrossel-cultural>
+      <div class="container">
+        <nav class="cultural-carrossel__controles" aria-label="Navegação dos museus" hidden>
+          <button class="carrossel__seta" type="button" data-cultural-anterior aria-controls="museus-trilho" aria-label="Museu anterior">&#8592;</button>
+          <button class="carrossel__seta" type="button" data-cultural-proximo aria-controls="museus-trilho" aria-label="Próximo museu">&#8594;</button>
+        </nav>
+      <div class="chamado-museu__grade cultural-carrossel__trilho" id="museus-trilho" role="region" aria-label="Cartões de museus" tabindex="0">
         <article class="chamado-museu__cartao">
           <figure class="chamado-museu__figura">
-            <img class="chamado-museu__imagem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Inaugura%C3%A7%C3%A3o_do_Museu_das_Culturas_Ind%C3%ADgenas_%2852183066389%29.jpg/1280px-Inaugura%C3%A7%C3%A3o_do_Museu_das_Culturas_Ind%C3%ADgenas_%2852183066389%29.jpg" alt="Interior do Museu das Culturas Indígenas durante a inauguração." loading="lazy">
-            <figcaption>Foto: Governo do Estado de São Paulo · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Inaugura%C3%A7%C3%A3o_do_Museu_das_Culturas_Ind%C3%ADgenas_(52183066389).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></figcaption>
+            <img class="chamado-museu__imagem" src="assets/cultura/negras/museu-artes-culturas-memorias-negras.png" alt="Fachada do Museu de Artes, Culturas e Memórias Negras" loading="lazy">
           </figure>
           <div class="chamado-museu__corpo">
-            <p class="sobretitulo">Programação gratuita</p>
-            <h2>Museu das Culturas Indígenas</h2>
-            <p>Em São Paulo, o museu abre exposições e uma agenda cultural para o público. Às quintas-feiras, a entrada é gratuita para todas as pessoas; indígenas entram sem custo todos os dias. No site estão a Feira de Artes Manuais Indígenas, o cineclube, as ações para famílias e o restante da programação.</p>
-            <a class="chamado-museu__acao" href="https://museudasculturasindigenas.org.br/" target="_blank" rel="noopener noreferrer">Ver a programação no site</a>
+            <p class="sobretitulo">Macapá — Amapá</p>
+            <h2>Museu de Artes, Culturas e Memórias Negras</h2>
+            <p>Espaço dedicado à preservação e valorização das artes, culturas e memórias negras, destacando a ancestralidade e as contribuições da população negra na Amazônia.</p>
+            <a class="chamado-museu__acao" href="https://cadastro.museus.gov.br/museus/museu-de-artes-culturas-e-memorias-negras/" target="_blank" rel="noopener noreferrer">Conhecer o cadastro no Ibram</a>
           </div>
         </article>
         <article class="chamado-museu__cartao">
-          <figure class="chamado-museu__figura">
+          <figure class="chamado-museu__figura chamado-museu__figura--credito">
             <img class="chamado-museu__imagem" src="https://upload.wikimedia.org/wikipedia/commons/8/87/Muncab.JPG" alt="Fachada do Museu Nacional da Cultura Afro-Brasileira, em Salvador." loading="lazy">
             <figcaption>Foto: Pá Freitas · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Muncab.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></figcaption>
           </figure>
           <div class="chamado-museu__corpo">
-            <p class="sobretitulo">Entrada gratuita às quartas e domingos</p>
+            <p class="sobretitulo">Salvador — Bahia</p>
             <h2>Museu Nacional da Cultura Afro-Brasileira</h2>
             <p>O MUNCAB fica no Centro Histórico de Salvador (BA), perto do Elevador Lacerda. Às quartas-feiras e aos domingos a entrada é gratuita, com reserva online. Em cartaz está “OMI TUTU – Água Fresca”, de Hariel Revignet, e de 10 a 13 de dezembro o museu recebe o Festival Paisagem Sonora.</p>
             <a class="chamado-museu__acao" href="https://www.muncab.com.br/" target="_blank" rel="noopener noreferrer">Conhecer o MUNCAB</a>
           </div>
         </article>
+      </div>
       </div>
     </section>
 
@@ -238,11 +328,50 @@
         </a>
       </div>
     </div>
+    <section class="container rodape__equipe" aria-labelledby="titulo-equipe">
+      <h2 id="titulo-equipe">Equipe do Projeto MIRA</h2>
+      <p>Projeto desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas — 4º período — UNIESBAM, unidade Adrianópolis.</p>
+      <div class="equipe__grade">
+        <div class="equipe__bloco">
+          <svg class="equipe__icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg>
+          <h3>PRODUÇÃO AUDIOVISUAL</h3>
+          <ul class="equipe__nomes">
+            <li>Breno Ferreira Ribeiro</li>
+            <li>Angel Luis Rodriguez Vizcaino</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <img class="equipe__icone" src="assets/icone-conversas.svg" alt="" width="28" height="28">
+          <h3>DESENVOLVIMENTO E ANIMAÇÃO DO CHATBOT</h3>
+          <ul class="equipe__nomes">
+            <li>Andrei Silva dos Santos</li>
+            <li>Henrique Paiva Araújo</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <svg class="equipe__icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M10 8l-2 2 2 2M14 8l2 2-2 2"/></svg>
+          <h3>DESENVOLVIMENTO DA PÁGINA, TESTES E INTEGRAÇÃO COM O CHATBOT</h3>
+          <ul class="equipe__nomes">
+            <li>Henrique Paiva Araújo</li>
+            <li>Lucas Vitor Conceição da Costa</li>
+            <li>Cínthia Raquel Ferreira da Costa</li>
+          </ul>
+        </div>
+        <div class="equipe__bloco">
+          <img class="equipe__icone" src="assets/icone-livro.svg" alt="" width="28" height="28">
+          <h3>PESQUISA, CONTEÚDO HISTÓRICO E APOIO À IMPLEMENTAÇÃO</h3>
+          <ul class="equipe__nomes">
+            <li>Luana Mendonça Tavares</li>
+            <li>Flavia Tainara Fonseca da Cruz</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <div class="container rodape__base"><span>© 2026 UNIESBAM · Cultura Afro e Indígena</span><span class="rodape__credito">Desenvolvido por <a href="https://github.com/HenriquePvAr/LaddingPage" target="_blank" rel="noopener noreferrer">Projeto Mira</a></span></div>
   </footer>
 
-  <a class="atalho-chat" href="https://wa.me/5592992270565" target="_blank" rel="noopener noreferrer"
-    aria-label="Conversar pelo WhatsApp, (92) 99227-0565, abre em nova aba">
+  <a class="atalho-chat" href="https://wa.me/5592986179198" target="_blank" rel="noopener noreferrer"
+    aria-label="Conversar pelo WhatsApp, (92) 98617-9198, abre em nova aba">
     <img class="atalho-chat__icone" src="assets/optimized/chatbot.webp" alt="" width="256" height="228">
     <img class="atalho-chat__rotulo" src="assets/optimized/chatbot-rotulo.webp" alt="" width="560" height="129">
   </a>
